@@ -1,20 +1,22 @@
-# 🏨 Hotel Booking Cancellation Analysis & Prediction
+<h1 align="center">🏨 Hotel Booking Cancellation Analysis &amp; Prediction</h1>
 
-[![CI](https://github.com/panteamkhh/hotel-cancellation-prediction/actions/workflows/ci.yml/badge.svg)](https://github.com/panteamkhh/hotel-cancellation-prediction/actions/workflows/ci.yml)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
-[![Python 3.10+](https://img.shields.io/badge/python-3.10%2B-blue.svg)](https://www.python.org/downloads/)
-[![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
+<p align="center">
+  <b>End-to-end Python analysis of ~119k hotel bookings, plus a machine-learning model that flags cancellations at booking time.</b>
+</p>
 
-An end-to-end, **Python-only** data analytics project on the **Hotel Booking
-Demand** dataset: data cleaning, exploratory data analysis, business analysis,
-and a machine-learning model that predicts cancellations at booking time.
+<p align="center">
+  <a href="https://github.com/panteamkhh/hotel-cancellation-prediction/actions/workflows/ci.yml"><img src="https://github.com/panteamkhh/hotel-cancellation-prediction/actions/workflows/ci.yml/badge.svg" alt="CI"></a>
+  <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="License: MIT"></a>
+  <a href="https://www.python.org/downloads/"><img src="https://img.shields.io/badge/python-3.10%2B-blue.svg" alt="Python 3.10+"></a>
+  <a href="https://github.com/psf/black"><img src="https://img.shields.io/badge/code%20style-black-000000.svg" alt="Code style: black"></a>
+  <a href="https://github.com/panteamkhh/hotel-cancellation-prediction/actions/workflows/ci.yml"><img src="https://img.shields.io/badge/tests-36%20passing-brightgreen.svg" alt="Tests"></a>
+</p>
 
-Every result is produced by a reusable, tested function in `src/`, so the whole
-report regenerates from the raw data with a single command — no BI tool required.
+---
 
 ## Table of contents
 
-- [Overview](#overview)
+- [About](#about)
 - [Business problem](#business-problem)
 - [Dataset](#dataset)
 - [Project workflow](#project-workflow)
@@ -28,13 +30,23 @@ report regenerates from the raw data with a single command — no BI tool requir
 - [Key assumptions](#key-assumptions)
 - [License](#license)
 
-## Overview
+## About
 
-A hotel chain (City Hotel & Resort Hotel) wants to understand customer booking
-behavior, revenue drivers, cancellation patterns, and upselling opportunities.
-This project cleans and analyzes ~119k booking records to answer those
-questions, then builds a predictive model to flag high-risk cancellations
-before they happen.
+This is a portfolio-grade, **Python-only** data analytics project built on the
+[Hotel Booking Demand](https://www.kaggle.com/datasets/jessemostipak/hotel-booking-demand)
+dataset. It walks the full path from raw data to a deployed-style model:
+
+1. **Clean** 119,390 raw rows down to 87,139 reliable bookings.
+2. **Analyze** cancellation, revenue, seasonality and customer behavior.
+3. **Model** cancellation risk with a comparison of four classifiers.
+4. **Ship** it as reusable, tested functions and one-command CLIs.
+
+Every number and chart in this README is produced by code in `src/` — no
+manual steps, no BI tool.
+
+> **Highlights:** 27.5% cancellation rate · 4.4× higher risk for 90+ day
+> lead times · 94.7% cancellation on non-refundable deposits · **0.922 ROC-AUC**
+> LightGBM model.
 
 ## Business problem
 
@@ -60,7 +72,9 @@ answers:
 
 ## Project workflow
 
-![Project Workflow](docs/project_workflow.png)
+<p align="center">
+  <img src="docs/project_workflow.png" alt="Project workflow" width="560">
+</p>
 
 Raw CSV → clean data → features → trained model, with each stage written to
 disk and available both as a notebook and as a CLI command. See
@@ -93,26 +107,34 @@ cancel at **4.4x** the rate of bookings made within a week (36.9% vs 8.4%).
 Canceled bookings have a median lead time of 80 days vs 38 days for completed
 stays.
 
-![Cancellation rate by lead time](reports/figures/06_cancellation_by_lead_time.png)
+<p align="center">
+  <img src="reports/figures/06_cancellation_by_lead_time.png" alt="Cancellation rate by lead time" width="620">
+</p>
 
 **Prior history matters a lot:** guests with a previous cancellation on record
 cancel again 68.0% of the time, vs 26.7% for guests with no such history.
 
-![Cancellation rate by prior history](reports/figures/14_cancel_rate_by_prior_history.png)
+<p align="center">
+  <img src="reports/figures/14_cancel_rate_by_prior_history.png" alt="Cancellation rate by prior history" width="620">
+</p>
 
 **Deposit type is a red flag, not a safeguard here:** `Non Refund` bookings
 cancel 94.7% of the time — far higher than `No Deposit` (26.7%) or `Refundable`
 (24.3%). In this dataset, non-refundable deposits are strongly associated with a
 specific high-risk booking channel rather than acting as a deterrent.
 
-![Cancellation rate by deposit type](reports/figures/13_cancel_rate_by_deposit.png)
+<p align="center">
+  <img src="reports/figures/13_cancel_rate_by_deposit.png" alt="Cancellation rate by deposit type" width="620">
+</p>
 
 **Demand and revenue are both seasonal**, peaking in August (11,186 bookings,
 ~$7.1M revenue) and lowest in January (4,685 bookings, ~$1.1M revenue). Total
 revenue across the cleaned dataset: **~$34.3M**, split $18.7M (City Hotel) /
 $15.6M (Resort Hotel).
 
-![Monthly revenue trend](reports/figures/07_monthly_revenue_trend.png)
+<p align="center">
+  <img src="reports/figures/07_monthly_revenue_trend.png" alt="Monthly revenue trend" width="620">
+</p>
 
 **Revenue is geographically concentrated:** Portugal, the UK, and France alone
 account for 53.9% of all bookings; Portugal alone drives ~$9.1M in revenue.
@@ -120,7 +142,9 @@ account for 53.9% of all bookings; Portugal alone drives ~$9.1M in revenue.
 68,974 bookings and $28.5M in revenue — but also carries the highest
 cancellation rate among channels with meaningful volume (30.9%).
 
-![Revenue by channel](reports/figures/17_revenue_by_channel.png)
+<p align="center">
+  <img src="reports/figures/17_revenue_by_channel.png" alt="Revenue by channel" width="620">
+</p>
 
 **Business-style vs. vacation-style bookings behave very differently:** short,
 weekday-heavy, short-lead-time stays ("business traveler" pattern, ~19.7% of
@@ -150,6 +174,15 @@ history. See [`docs/model_card.md`](docs/model_card.md) for intended use,
 limitations and ethical notes.
 
 ## Tech stack
+
+<p align="center">
+  <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python">
+  <img src="https://img.shields.io/badge/pandas-150458?style=for-the-badge&logo=pandas&logoColor=white" alt="pandas">
+  <img src="https://img.shields.io/badge/NumPy-013243?style=for-the-badge&logo=numpy&logoColor=white" alt="NumPy">
+  <img src="https://img.shields.io/badge/scikit--learn-F7931E?style=for-the-badge&logo=scikitlearn&logoColor=white" alt="scikit-learn">
+  <img src="https://img.shields.io/badge/XGBoost-189FDD?style=for-the-badge" alt="XGBoost">
+  <img src="https://img.shields.io/badge/LightGBM-2C8EBB?style=for-the-badge" alt="LightGBM">
+</p>
 
 - **Language:** Python 3.10+
 - **Analysis:** pandas, numpy
@@ -262,4 +295,4 @@ hotel-cancellation-prediction/
 
 ## License
 
-MIT — see [LICENSE](LICENSE).
+Released under the [MIT License](LICENSE).
