@@ -1,0 +1,18 @@
+cff-version: 1.2.0
+message: "If you use this project, please cite it as below."
+title: "Hotel Booking Cancellation Analysis & Prediction"
+abstract: >-
+  An end-to-end Python analysis of the Hotel Booking Demand dataset and a
+  machine-learning model that predicts booking cancellations at booking time.
+authors:
+  - name: "Pantea Mokhtari"
+version: 1.0.0
+date-released: "2026-09-19"
+license: MIT
+repository-code: "https://github.com/panteamkhh/hotel-cancellation-prediction"
+keywords:
+  - data-analysis
+  - machine-learning
+  - hotel-bookings
+  - cancellation-prediction
+  - python
