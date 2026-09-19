@@ -1,0 +1,8 @@
+* text=auto eol=lf
+
+*.png binary
+*.jpg binary
+*.pkl binary
+*.joblib binary
+
+*.ipynb -text diff=ipynb linguist-documentation=true
