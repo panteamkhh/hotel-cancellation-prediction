@@ -52,6 +52,7 @@ Issues = "https://github.com/panteamkhh/hotel-cancellation-prediction/issues"
 Changelog = "https://github.com/panteamkhh/hotel-cancellation-prediction/blob/main/CHANGELOG.md"
 
 [project.scripts]
+hotel = "src.cli:main"
 hotel-pipeline = "src.run_pipeline:run"
 hotel-analysis = "src.run_analysis:run"
 hotel-train = "src.train:main"
