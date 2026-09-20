@@ -1,6 +1,10 @@
-"""Ensures `src` is importable when running pytest from the project root."""
+"""Ensures `src` is importable and matplotlib runs headless under pytest."""
 
 import sys
 from pathlib import Path
+
+import matplotlib
+
+matplotlib.use("Agg")
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
