@@ -5,6 +5,28 @@ Format loosely follows [Keep a Changelog](https://keepachangelog.com/).
 
 ## [Unreleased]
 
+## [1.2.0] - 2026-09-20
+
+### Added
+
+- `src/data_quality.py` — missing-value, duplicate, constant-column and
+  target-balance checks.
+- `src/threshold_analysis.py` — cost-sensitive threshold sweep and the
+  expected-cost-minimising threshold.
+- `src/cli.py` — unified `hotel {pipeline,analysis,train}` command-line
+  interface, with lazy subcommand imports.
+- Tests for the new modules plus coverage for `config` and `evaluation`
+  (suite now 56 tests).
+- `docs/faq.md`, `docs/business_recommendations.md`,
+  `docs/reproducibility.md`, `SECURITY.md`, `CODE_OF_CONDUCT.md` and a
+  Dependabot configuration.
+- A Documentation index and refreshed test counts in the README.
+
+### Changed
+
+- `conftest.py` forces the headless Agg matplotlib backend so the evaluation
+  tests run on CI.
+
 ## [1.1.0] - 2026-09-19
 
 ### Added

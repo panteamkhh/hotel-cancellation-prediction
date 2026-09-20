@@ -9,7 +9,7 @@
   <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="License: MIT"></a>
   <a href="https://www.python.org/downloads/"><img src="https://img.shields.io/badge/python-3.10%2B-blue.svg" alt="Python 3.10+"></a>
   <a href="https://github.com/psf/black"><img src="https://img.shields.io/badge/code%20style-black-000000.svg" alt="Code style: black"></a>
-  <a href="https://github.com/panteamkhh/hotel-cancellation-prediction/actions/workflows/ci.yml"><img src="https://img.shields.io/badge/tests-36%20passing-brightgreen.svg" alt="Tests"></a>
+  <a href="https://github.com/panteamkhh/hotel-cancellation-prediction/actions/workflows/ci.yml"><img src="https://img.shields.io/badge/tests-56%20passing-brightgreen.svg" alt="Tests"></a>
 </p>
 
 ---
@@ -27,6 +27,7 @@
 - [Quick start](#quick-start)
 - [Development](#development)
 - [Project structure](#project-structure)
+- [Documentation](#documentation)
 - [Key assumptions](#key-assumptions)
 - [License](#license)
 
@@ -234,7 +235,7 @@ pre-commit install
 
 ruff check .              # lint
 black --check .           # formatting
-pytest                    # tests (36 tests covering src/)
+pytest                    # tests (56 tests covering src/)
 pytest --cov=src          # tests with coverage
 make check                # all of the above at once
 ```
@@ -260,11 +261,14 @@ hotel-cancellation-prediction/
 │   ├── visualization.py           # matching chart for each question
 │   ├── theme.py                   # shared chart theme
 │   ├── evaluation.py              # model evaluation helpers
+│   ├── data_quality.py            # missing/duplicate/constant checks
+│   ├── threshold_analysis.py      # cost-sensitive decision threshold
 │   ├── train.py                   # model comparison CLI
 │   ├── predict.py                 # score new bookings
+│   ├── cli.py                     # unified command-line interface
 │   ├── run_pipeline.py            # clean -> features -> train CLI
 │   └── run_analysis.py            # regenerate figures + exports CLI
-├── tests/                         # pytest suite (36 tests)
+├── tests/                         # pytest suite (56 tests)
 ├── models/                        # best_model.pkl + model_metrics.json
 ├── reports/
 │   ├── figures/                   # 18 charts
@@ -277,6 +281,18 @@ hotel-cancellation-prediction/
 ├── requirements.txt               # runtime dependencies
 └── requirements-dev.txt           # runtime + dev dependencies
 ```
+
+## Documentation
+
+| Document | Contents |
+|---|---|
+| [`docs/data_dictionary.md`](docs/data_dictionary.md) | Every raw and derived column |
+| [`docs/model_card.md`](docs/model_card.md) | Intended use, metrics, limitations, ethics |
+| [`docs/project_workflow.md`](docs/project_workflow.md) | Stage-by-stage pipeline |
+| [`docs/business_recommendations.md`](docs/business_recommendations.md) | Actionable recommendations with evidence |
+| [`docs/reproducibility.md`](docs/reproducibility.md) | How to reproduce every artifact |
+| [`docs/faq.md`](docs/faq.md) | Common questions |
+| [`reports/final_report.md`](reports/final_report.md) | Full written analysis |
 
 ## Key assumptions
 
