@@ -9,7 +9,7 @@
   <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="License: MIT"></a>
   <a href="https://www.python.org/downloads/"><img src="https://img.shields.io/badge/python-3.10%2B-blue.svg" alt="Python 3.10+"></a>
   <a href="https://github.com/psf/black"><img src="https://img.shields.io/badge/code%20style-black-000000.svg" alt="Code style: black"></a>
-  <a href="https://github.com/panteamkhh/hotel-cancellation-prediction/actions/workflows/ci.yml"><img src="https://img.shields.io/badge/tests-56%20passing-brightgreen.svg" alt="Tests"></a>
+  <a href="https://github.com/panteamkhh/hotel-cancellation-prediction/actions/workflows/ci.yml"><img src="https://img.shields.io/badge/tests-79%20passing-brightgreen.svg" alt="Tests"></a>
 </p>
 
 ---
@@ -235,7 +235,7 @@ pre-commit install
 
 ruff check .              # lint
 black --check .           # formatting
-pytest                    # tests (56 tests covering src/)
+pytest                    # tests (79 tests covering src/)
 pytest --cov=src          # tests with coverage
 make check                # all of the above at once
 ```
@@ -268,14 +268,14 @@ hotel-cancellation-prediction/
 │   ├── cli.py                     # unified command-line interface
 │   ├── run_pipeline.py            # clean -> features -> train CLI
 │   └── run_analysis.py            # regenerate figures + exports CLI
-├── tests/                         # pytest suite (56 tests)
+├── tests/                         # pytest suite (79 tests)
 ├── models/                        # best_model.pkl + model_metrics.json
 ├── reports/
 │   ├── figures/                   # 18 charts
 │   └── final_report.md            # written findings + recommendations
 ├── docs/                          # data dictionary, model card, workflow
 ├── output/                        # generated CSV exports (gitignored)
-├── .github/workflows/ci.yml       # lint + format + test CI
+├── .github/workflows/             # lint/format/test CI + CodeQL analysis
 ├── Makefile                       # common tasks
 ├── pyproject.toml                 # metadata, deps, tool config
 ├── requirements.txt               # runtime dependencies
@@ -292,6 +292,8 @@ hotel-cancellation-prediction/
 | [`docs/business_recommendations.md`](docs/business_recommendations.md) | Actionable recommendations with evidence |
 | [`docs/reproducibility.md`](docs/reproducibility.md) | How to reproduce every artifact |
 | [`docs/faq.md`](docs/faq.md) | Common questions |
+| [`docs/glossary.md`](docs/glossary.md) | Definitions of project terms |
+| [`docs/roadmap.md`](docs/roadmap.md) | Planned improvements |
 | [`reports/final_report.md`](reports/final_report.md) | Full written analysis |
 
 ## Key assumptions

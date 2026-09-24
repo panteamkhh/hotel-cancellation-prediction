@@ -5,6 +5,13 @@ Format loosely follows [Keep a Changelog](https://keepachangelog.com/).
 
 ## [Unreleased]
 
+### Added
+
+- Test coverage for every visualization function and the remaining analysis
+  functions (suite now 79 tests).
+- CodeQL security-analysis workflow.
+- `docs/glossary.md` and `docs/roadmap.md`, linked from the README.
+
 ## [1.2.0] - 2026-09-20
 
 ### Added
